@@ -1,4 +1,4 @@
-import { All, Controller,Get, Post } from '@nestjs/common';
+import { All, Body, Controller,Get, Post } from '@nestjs/common';
 
 @Controller('roles')
 export class RolesController {
@@ -16,7 +16,8 @@ export class RolesController {
             
         }
         @All("allpost")  //all accept get and post method so we can call by this method
-        allItem():string{
+        allItem(@Body() record:any):string{
+            console.log(record)
             return "hiiiii"
             
         }
