@@ -1,5 +1,4 @@
-import { Controller,Get } from '@nestjs/common';
-import { get } from 'http';
+import { All, Controller,Get, Post } from '@nestjs/common';
 
 @Controller('roles')
 export class RolesController {
@@ -11,6 +10,16 @@ export class RolesController {
     amit(){
         return "this is come from you employee/roles"
     }
+    @Post("post")
+        postItem():string{
+            return "hiiiii"
+            
+        }
+        @All("allpost")  //all accept get and post method so we can call by this method
+        allItem():string{
+            return "hiiiii"
+            
+        }
 
 
 }
