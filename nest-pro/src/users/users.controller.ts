@@ -1,4 +1,4 @@
-import { Controller,Get } from '@nestjs/common';
+import { Controller,Get, Post } from '@nestjs/common';
 
 
 @Controller('users')
@@ -23,6 +23,12 @@ export class UsersController {
 
         }
     }
+    @Post("add-user")
+        postFun():string{
+
+            return "hii how are you brothers"
+        }
+    
 }
 
 
