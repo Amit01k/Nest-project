@@ -11,6 +11,7 @@ import { EmployeeModule } from './employee/employee.module';
 import { BlogsService } from './blogs/blogs.service';
 import { PostsController } from './posts/posts.controller';
 import { AuthMiddleware } from './middleware/auth';
+import { AuthMiddleware2 } from './middleware/auth2';
 
 @Module({
   imports: [EmployeeModule],
@@ -21,7 +22,7 @@ import { AuthMiddleware } from './middleware/auth';
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
-      .apply(AuthMiddleware)
+      .apply(AuthMiddleware,AuthMiddleware2)   //by this way we call two middleware on same time
       // .exclude({
       //   path: 'posts/post',    //by this way we give credential where our middleware not work
       //   method: RequestMethod.GET,
