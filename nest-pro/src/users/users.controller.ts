@@ -35,8 +35,9 @@ export class UsersController {
   }
 
   @Post('blog-add')
-  blogadd(@Body() data: any) {
+  blogadd(@Body() record: Number) {
+    console.log(record); //take  data from raw json
     // return 'this is come from blog list ';
-    return this.blogService.create(data);
+    return this.blogService.create(record);
   }
 }

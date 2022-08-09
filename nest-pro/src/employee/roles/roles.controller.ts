@@ -21,11 +21,11 @@ export class RolesController {
   amit() {
     return 'this is come from you employee/roles';
   }
-    @Get('history*card') //localhost:3000/roles/historysbdjgbjdsfgjcard
-    cardamit() {
-      // in the middle of history and card we can put anything and its acceptable
-      return 'this is come from you employee/roles historycard';
-    }
+  @Get('history*card') //localhost:3000/roles/historysbdjgbjdsfgjcard
+  cardamit() {
+    // in the middle of history and card we can put anything and its acceptable
+    return 'this is come from you employee/roles historycard';
+  }
   @Post('post')
   postItem(): string {
     return 'hiiiii';
@@ -40,11 +40,11 @@ export class RolesController {
   item(@Param() record: any) {
     return 'userData' + record.id; //by this way we take input from user in params
   }
-//   @Get('history*card') //localhost:3000/roles/historysbdjgbjdsfgjcard
-//   cardamit() {
-//     // in the middle of history and card we can put anything and its acceptable
-//     return 'this is come from you employee/roles historycard';
-//   }
+  //   @Get('history*card') //localhost:3000/roles/historysbdjgbjdsfgjcard
+  //   cardamit() {
+  //     // in the middle of history and card we can put anything and its acceptable
+  //     return 'this is come from you employee/roles historycard';
+  //   }
 
   @Get('query')
   qList(@Query() record: any): String {
