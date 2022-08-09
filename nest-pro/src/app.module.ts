@@ -22,7 +22,15 @@ export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
     consumer
       .apply(AuthMiddleware)
-      //.forRoutes("posts")
-      .forRoutes(PostsController); //here we are setting the where we want to call out middleware
+      // .exclude({
+      //   path: 'posts/post',    //by this way we give credential where our middleware not work
+      //   method: RequestMethod.GET,
+      // })
+      //.forRoutes('posts');
+      //.forRoutes(PostsController); //here we are setting the where we want to call out middleware
+      //  .forRoutes({
+      //   path:"/users/history",method:RequestMethod.GET         //this is way to give specific path to run middleware
+      // })
+      .forRoutes(UsersController);
   }
 }
