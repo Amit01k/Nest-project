@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
+import { Controller, Get, Post, Body, Delete } from '@nestjs/common';
 
 import { BlogsService } from '../blogs/blogs.service';
 
@@ -28,16 +28,21 @@ export class UsersController {
   postFun(): string {
     return 'hii how are you brothers';
   }
+  @Delete('blog')
+  blogDelete() {
+    this.blogService.deleteData();
+  }
 
   @Get('blog-list')
   async blogList(): Promise<any[]> {
     return this.blogService.findData();
   }
 
-  @Post('blog-add')
+  @Post('blog')
   blogadd(@Body() record: Number) {
     console.log(record); //take  data from raw json
     // return 'this is come from blog list ';
-    return this.blogService.create(record);
+    this.blogService.create(record);
+    return record;
   }
 }

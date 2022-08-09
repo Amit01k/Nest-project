@@ -32,6 +32,6 @@ export class AppModule implements NestModule {
       //  .forRoutes({
       //   path:"/users/history",method:RequestMethod.GET         //this is way to give specific path to run middleware
       // })
-      .forRoutes(UsersController);
+      //.forRoutes(UsersController);
   }
 }

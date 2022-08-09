@@ -15,4 +15,7 @@ export class BlogsService {
   findData(): any[] {
     return this.blogs;
   }
+  deleteData(){
+    this.blogs.pop()
+  }
 }
