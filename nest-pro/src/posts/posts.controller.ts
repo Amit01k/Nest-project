@@ -6,7 +6,7 @@ export class PostsController {
   hello() {
     return 'hii amit ';
   }
-  @Post('post')
+  @Get('post')
   @HttpCode(200)
   postHello() {
     return 'this is coming from post controller form post method';
